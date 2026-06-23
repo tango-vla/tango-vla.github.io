@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Anonymous project page for Humanoid Navigation in Cluttered Environments with a Whole-Body Vision-Language-Action Model.">
+  <meta name="keywords" content="humanoid navigation, vision-language-action, whole-body control, cluttered environments, TANGO">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Humanoid Navigation in Cluttered Environments with a Whole-Body Vision-Language-Action Model</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="data:,">
+
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script defer src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="#top" aria-label="Home">
+      <span class="icon">
+        <i class="fas fa-home"></i>
+      </span>
+    </a>
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbar-menu" class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="#overview">Overview</a>
+      <a class="navbar-item" href="#method">Method</a>
+      <a class="navbar-item" href="#experiments">Experiments</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+  <section class="hero publication-header">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <p class="publication-venue">CoRL 2026 Anonymous Submission</p>
+            <h1 class="title is-1 publication-title">
+              Humanoid Navigation in Cluttered Environments with a Whole-Body Vision-Language-Action Model
+            </h1>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Anonymous Author(s)</span>
+            </div>
+            <div class="is-size-6 publication-affiliations">
+              <span class="author-block">Affiliation withheld for double-blind review</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser" id="overview">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <figure class="paper-figure">
+          <div class="teaser-video-wrap">
+            <div class="publication-video">
+              <iframe
+                src="https://www.youtube.com/embed/LAzciQnu_is?rel=0"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+        </figure>
+        <h2 class="subtitle has-text-centered">
+          <span class="method-name">TANGO</span> is a whole-body vision-language-action framework for language-conditioned humanoid traversal in cluttered indoor environments.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              We study the problem of navigating cluttered indoor environments with a humanoid robot. Unlike conventional navigation methods that operate over simplified navigation abstractions, humanoid traversal in cluttered environments requires continuous geometry-aware whole-body adaptation, including coordinated arm placement, torso adjustment, and gait modulation for collision-free movement through complex 3D spaces.
+            </p>
+            <p>
+              We introduce TANGO, a whole-body vision-language navigation framework for language-conditioned humanoid traversal in cluttered environments. Given a natural-language instruction and egocentric RGB observations, TANGO predicts 29-DoF joint-space actions for whole-body humanoid control.
+            </p>
+            <p>
+              TANGO is trained entirely in simulation by synthesizing diverse collision-free traversal behaviors through global path planning, kinematic whole-body motion generation, obstacle-aware motion editing, and reinforcement-learning-based tracking. In simulation and real-world experiments, TANGO improves language-guided navigation and transfers zero-shot to a Unitree G1 humanoid without real-world training data.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-band" id="method">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <p class="section-kicker">Method</p>
+          <h2 class="title is-3">Traversal via Whole-Body Vision-Language-Action Model</h2>
+          <div class="content has-text-justified">
+            <p>
+              TANGO is a whole-body VLA system for cluttered indoor vision-language navigation. It combines a simulation data pipeline for collision-free traversal supervision with a triple-system model that maps language and egocentric RGB observations to executable whole-body action chunks.
+            </p>
+          </div>
+          <figure class="paper-figure">
+            <img src="./static/images/architecture.png"
+                 alt="TANGO architecture and data-generation pipeline.">
+            <figcaption>
+              <strong>TANGO architecture and data pipeline.</strong>
+              Plan-Edit-Track synthesizes whole-body traversal data; a vision-language backbone, action expert, and low-level tracker produce continuous humanoid control.
+            </figcaption>
+          </figure>
+
+          <div class="paper-card-grid">
+            <article class="paper-card">
+              <h3 class="title is-5">Problem Formulation</h3>
+              <p>Given a language instruction, front/downward RGB history, and whole-body proprioception, TANGO predicts a horizon of whole-body actions: 29-DoF desired joint angles plus a 6D base rotation representation.</p>
+            </article>
+            <article class="paper-card">
+              <h3 class="title is-5">Simulation Data Generation</h3>
+              <p>VLNVerse and SAGE-3D scenes are augmented with lateral, ground-level, and overhead obstacles. The PET pipeline plans paths, edits motions for obstacle avoidance, and tracks them to dynamic feasibility.</p>
+            </article>
+            <article class="paper-card">
+              <h3 class="title is-5">TANGO Architecture and Training</h3>
+              <p>A 7B vision-language backbone is paired with a flow-matching MM-DiT action expert. Real-time chunking aligns training with streaming execution through a robust low-level motion tracker.</p>
+            </article>
+            <article class="paper-card">
+              <h3 class="title is-5">Deployment</h3>
+              <p>At deployment, the low-frequency VLA module runs on a server while the high-frequency whole-body tracker runs onboard, enabling responsive real-world humanoid control.</p>
+            </article>
+          </div>
+
+          <figure class="paper-figure deployment-figure">
+            <img src="./static/images/deployment-system.png"
+                 alt="TANGO real-world deployment system.">
+            <figcaption>
+              <strong>Real-world deployment system.</strong>
+              A cloud-edge setup separates low-frequency VLA inference from high-frequency whole-body tracking.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="experiments">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <p class="section-kicker">Experiments</p>
+          <h2 class="title is-3">Simulation and Real-World Evaluation</h2>
+          <div class="experiment-video-grid">
+            <div class="placeholder-frame video-placeholder" role="img" aria-label="Simulation experiment video placeholder">
+              <span class="placeholder-icon">
+                <i class="fas fa-play-circle"></i>
+              </span>
+              <span class="placeholder-label">Simulation Experiment Video Placeholder</span>
+            </div>
+            <div class="placeholder-frame video-placeholder" role="img" aria-label="Real-world experiment video placeholder">
+              <span class="placeholder-icon">
+                <i class="fas fa-play-circle"></i>
+              </span>
+              <span class="placeholder-label">Real-World Experiment Video Placeholder</span>
+            </div>
+          </div>
+
+          <div class="paper-card-grid findings-grid">
+            <article class="paper-card">
+              <h3 class="title is-5">VLN Performance</h3>
+              <p>TANGO is the only compared method evaluated with low-level physical control, yet achieves the best SR and NE on both seen and unseen VLNVerse validation splits.</p>
+            </article>
+            <article class="paper-card">
+              <h3 class="title is-5">Cluttered Environment Traversal Performance</h3>
+              <p>On augmented cluttered VLNVerse scenes, TANGO improves SR and SPL while reducing collision rate to 9.90 percent using only RGB observations.</p>
+            </article>
+            <article class="paper-card">
+              <h3 class="title is-5">Real-World Experiment</h3>
+              <p>TANGO transfers zero-shot to a Unitree G1 humanoid for long-horizon navigation, cluttered-scene traversal, and narrow-passage side-stepping.</p>
+            </article>
+            <article class="paper-card">
+              <h3 class="title is-5">Ablation Studies</h3>
+              <p>Whole-body action generation remains robust under physical low-level control, while planar policies degrade substantially when moved from teleportation to embodied execution.</p>
+            </article>
+          </div>
+
+          <div class="table-stack">
+            <div class="table-card">
+              <h3 class="title is-5">VLNVerse Benchmark</h3>
+              <div class="table-container">
+                <table class="result-table">
+                  <thead>
+                    <tr>
+                      <th rowspan="2">Method</th>
+                      <th rowspan="2">Low-Level Control</th>
+                      <th colspan="4">Val Seen</th>
+                      <th colspan="4">Val Unseen</th>
+                    </tr>
+                    <tr>
+                      <th>NE</th>
+                      <th>OSR</th>
+                      <th>SR</th>
+                      <th>SPL</th>
+                      <th>NE</th>
+                      <th>OSR</th>
+                      <th>SR</th>
+                      <th>SPL</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>CMA</td>
+                      <td>No</td>
+                      <td>5.36</td>
+                      <td>59.81</td>
+                      <td>37.35</td>
+                      <td>33.36</td>
+                      <td>5.16</td>
+                      <td>62.79</td>
+                      <td>31.15</td>
+                      <td>27.92</td>
+                    </tr>
+                    <tr>
+                      <td>RDP</td>
+                      <td>No</td>
+                      <td>4.02</td>
+                      <td>68.09</td>
+                      <td>47.28</td>
+                      <td><strong>41.69</strong></td>
+                      <td>3.75</td>
+                      <td><strong>71.93</strong></td>
+                      <td>48.60</td>
+                      <td><strong>42.72</strong></td>
+                    </tr>
+                    <tr>
+                      <td>Seq2Seq</td>
+                      <td>No</td>
+                      <td>4.78</td>
+                      <td>44.68</td>
+                      <td>32.62</td>
+                      <td>30.39</td>
+                      <td>4.36</td>
+                      <td>49.58</td>
+                      <td>35.03</td>
+                      <td>33.37</td>
+                    </tr>
+                    <tr class="ours-row">
+                      <td>TANGO</td>
+                      <td>Yes</td>
+                      <td><strong>3.90</strong></td>
+                      <td><strong>70.31</strong></td>
+                      <td><strong>54.69</strong></td>
+                      <td>40.18</td>
+                      <td><strong>3.72</strong></td>
+                      <td>71.07</td>
+                      <td><strong>52.89</strong></td>
+                      <td>40.18</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="table-card-grid">
+              <div class="table-card">
+                <h3 class="title is-5">Cluttered VLNVerse Scenes</h3>
+                <div class="table-container">
+                  <table class="result-table compact-table">
+                    <thead>
+                      <tr>
+                        <th>Method</th>
+                        <th>NE</th>
+                        <th>SR</th>
+                        <th>SPL</th>
+                        <th>CR</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>InternVLA-N1 + Unitree Control</td>
+                        <td>5.34</td>
+                        <td>26.67</td>
+                        <td>11.92</td>
+                        <td>19.03</td>
+                      </tr>
+                      <tr>
+                        <td>InternVLA-N1 + HumanoidPF</td>
+                        <td><strong>3.19</strong></td>
+                        <td>35.29</td>
+                        <td>24.35</td>
+                        <td>16.11</td>
+                      </tr>
+                      <tr class="ours-row">
+                        <td>TANGO</td>
+                        <td>4.01</td>
+                        <td><strong>43.75</strong></td>
+                        <td><strong>31.83</strong></td>
+                        <td><strong>9.90</strong></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="table-card">
+                <h3 class="title is-5">Action-Space Ablation</h3>
+                <div class="table-container">
+                  <table class="result-table compact-table">
+                    <thead>
+                      <tr>
+                        <th>Method</th>
+                        <th>Low-Level Control</th>
+                        <th>SR</th>
+                        <th>SPL</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>InternVLA-N1</td>
+                        <td>No</td>
+                        <td>43.69</td>
+                        <td>35.74</td>
+                      </tr>
+                      <tr>
+                        <td>TANGO-2D</td>
+                        <td>No</td>
+                        <td>45.74</td>
+                        <td>35.44</td>
+                      </tr>
+                      <tr>
+                        <td>InternVLA-N1</td>
+                        <td>Yes</td>
+                        <td>42.37</td>
+                        <td>22.50</td>
+                      </tr>
+                      <tr>
+                        <td>TANGO-2D</td>
+                        <td>Yes</td>
+                        <td>26.67</td>
+                        <td>8.34</td>
+                      </tr>
+                      <tr class="ours-row">
+                        <td>TANGO</td>
+                        <td>Yes</td>
+                        <td><strong>52.89</strong></td>
+                        <td><strong>40.18</strong></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <figure class="paper-figure">
+            <img src="./static/images/real-results.png"
+                 alt="Real-world humanoid navigation results.">
+            <figcaption>
+              <strong>Real-world deployment.</strong>
+              TANGO performs long-horizon language-guided navigation, traverses cluttered environments, and adapts whole-body motions to pass through narrow spaces without real-world training.
+            </figcaption>
+          </figure>
+
+          <div class="content has-text-justified">
+            <h3 class="title is-4">Conclusion</h3>
+            <p>
+              TANGO demonstrates that a whole-body VLA policy can directly predict 29-DoF actions for humanoid navigation. The results show strong language-guided navigation performance, improved collision-aware traversal in cluttered scenes, and zero-shot sim-to-real transfer on humanoid hardware.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+</body>
+</html>
