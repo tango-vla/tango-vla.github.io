@@ -8,14 +8,6 @@ a {
   color: #0f766e;
 }
 
-.navbar {
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.navbar-item {
-  font-family: 'Google Sans', sans-serif;
-}
-
 .link-block {
   display: inline-block;
 }
@@ -82,6 +74,7 @@ a {
   color: #39434d;
   font-family: 'Google Sans', sans-serif;
   font-size: 1.2rem;
+  font-weight: 700;
   letter-spacing: 0.01em;
   line-height: 1.5;
   margin-top: 0.55rem;
