@@ -78,6 +78,24 @@ a {
   margin-top: 0.75rem;
 }
 
+.publication-status {
+  color: #39434d;
+  font-family: 'Google Sans', sans-serif;
+  font-size: 0.95rem;
+  margin-top: 0.45rem;
+}
+
+.oral-highlight {
+  background: rgba(138, 21, 56, 0.08);
+  border: 1px solid rgba(138, 21, 56, 0.18);
+  border-radius: 999px;
+  color: #8a1538;
+  display: inline-block;
+  font-weight: 800;
+  margin-left: 0.18rem;
+  padding: 0.08rem 0.48rem;
+}
+
 .publication-venue {
   color: #0f766e;
   display: inline-block;
