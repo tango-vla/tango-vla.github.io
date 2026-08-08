@@ -29,7 +29,7 @@
           <div class="column has-text-centered">
             <!-- <p class="publication-venue">CoRL 2026 Anonymous Submission</p> -->
             <h1 class="title is-1 publication-title">
-              TANGO💃: Humanoid Navigation in Cluttered Environments with a Whole-Body Vision-Language-Action Model
+              <span class="tango-name">TANGO</span>💃: Humanoid Navigation in Cluttered Environments with a Whole-Body Vision-Language-Action Model
             </h1>
 
             <div class="is-size-5 publication-authors">
@@ -101,7 +101,7 @@
           </div>
         </figure>
         <h2 class="subtitle has-text-centered">
-          <span class="method-name">TANGO</span> is a whole-body vision-language-action framework for language-conditioned humanoid traversal in cluttered indoor environments.
+          <strong class="method-name tango-name">TANGO</strong> is a whole-body vision-language-action framework for language-conditioned humanoid traversal in cluttered indoor environments.
         </h2>
       </div>
     </div>
@@ -117,10 +117,10 @@
               We study the problem of navigating cluttered indoor environments with a humanoid robot. Unlike conventional navigation methods that operate over simplified navigation abstractions, humanoid traversal in cluttered environments requires continuous geometry-aware whole-body adaptation, including coordinated arm placement, torso adjustment, and gait modulation for collision-free movement through complex 3D spaces.
             </p>
             <p>
-              We introduce TANGO, a whole-body vision-language navigation framework for language-conditioned humanoid traversal in cluttered environments. Given a natural-language instruction and egocentric RGB observations, TANGO predicts 29-DoF joint-space actions for whole-body humanoid control.
+              We introduce <span class="tango-name">TANGO</span>, a whole-body vision-language navigation framework for language-conditioned humanoid traversal in cluttered environments. Given a natural-language instruction and egocentric RGB observations, <span class="tango-name">TANGO</span> predicts 29-DoF joint-space actions for whole-body humanoid control.
             </p>
             <p>
-              TANGO is trained entirely in simulation by synthesizing diverse collision-free traversal behaviors through global path planning, kinematic whole-body motion generation, obstacle-aware motion editing, and reinforcement-learning-based tracking. In simulation and real-world experiments, TANGO improves language-guided navigation and transfers zero-shot to a Unitree G1 humanoid without real-world training data.
+              <span class="tango-name">TANGO</span> is trained entirely in simulation by synthesizing diverse collision-free traversal behaviors through global path planning, kinematic whole-body motion generation, obstacle-aware motion editing, and reinforcement-learning-based tracking. In simulation and real-world experiments, <span class="tango-name">TANGO</span> improves language-guided navigation and transfers zero-shot to a Unitree G1 humanoid without real-world training data.
             </p>
           </div>
         </div>
@@ -136,14 +136,14 @@
           <h2 class="title is-3">Traversal via Whole-Body Vision-Language-Action Model</h2>
           <div class="content has-text-justified">
             <p>
-              TANGO is a whole-body VLA system for cluttered indoor vision-language navigation. It combines a simulation data pipeline for collision-free traversal supervision with a triple-system model that maps language and egocentric RGB observations to executable whole-body action chunks.
+              <span class="tango-name">TANGO</span> is a whole-body VLA system for cluttered indoor vision-language navigation. It combines a simulation data pipeline for collision-free traversal supervision with a triple-system model that maps language and egocentric RGB observations to executable whole-body action chunks.
             </p>
           </div>
           <figure class="paper-figure">
             <img src="./static/images/architecture.png"
                  alt="TANGO architecture and data-generation pipeline.">
             <figcaption>
-              <strong>TANGO architecture and data pipeline.</strong>
+              <strong><span class="tango-name">TANGO</span> architecture and data pipeline.</strong>
               Plan-Edit-Track synthesizes whole-body traversal data; a vision-language backbone, action expert, and low-level tracker produce continuous humanoid control.
             </figcaption>
           </figure>
@@ -151,14 +151,14 @@
           <div class="paper-card-grid">
             <article class="paper-card">
               <h3 class="title is-5">Problem Formulation</h3>
-              <p>Given a language instruction, front/downward RGB history, and whole-body proprioception, TANGO predicts a horizon of whole-body actions: 29-DoF desired joint angles plus a 6D base rotation representation.</p>
+              <p>Given a language instruction, front/downward RGB history, and whole-body proprioception, <span class="tango-name">TANGO</span> predicts a horizon of whole-body actions: 29-DoF desired joint angles plus a 6D base rotation representation.</p>
             </article>
             <article class="paper-card">
               <h3 class="title is-5">Simulation Data Generation</h3>
               <p>VLNVerse and SAGE-3D scenes are augmented with lateral, ground-level, and overhead obstacles. The PET pipeline plans paths, edits motions for obstacle avoidance, and tracks them to dynamic feasibility.</p>
             </article>
             <article class="paper-card">
-              <h3 class="title is-5">TANGO Architecture and Training</h3>
+              <h3 class="title is-5"><span class="tango-name">TANGO</span> Architecture and Training</h3>
               <p>A 7B vision-language backbone is paired with a flow-matching MM-DiT action expert. Real-time chunking aligns training with streaming execution through a robust low-level motion tracker.</p>
             </article>
             <article class="paper-card">
