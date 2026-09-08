@@ -7,7 +7,7 @@
   <meta name="keywords" content="humanoid navigation, vision-language-action, whole-body control, cluttered environments, TANGO">
   <meta name="robots" content="noindex,nofollow">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Humanoid Navigation in Cluttered Environments with a Whole-Body Vision-Language-Action Model</title>
+  <title>TANGO | Humanoid Navigation in Cluttered Environments with a Whole-Body Vision-Language-Action Model</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
@@ -18,100 +18,45 @@
   <link rel="icon" href="data:,">
 
   <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script defer src="./static/js/index.js"></script>
 </head>
 <body>
-
+<a class="skip-link" href="#overview">Skip to content</a>
 <main id="top">
-  <section class="hero publication-header">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <!-- <p class="publication-venue">CoRL 2026 Anonymous Submission</p> -->
-            <h1 class="title is-1 publication-title">
-              <span class="tango-name">TANGO</span>💃: Humanoid Navigation in Cluttered Environments with a Whole-Body Vision-Language-Action Model
-            </h1>
-
+  <section class="cover" aria-labelledby="project-title">
+    <video class="cover-video" id="cover-video" autoplay playsinline muted loop preload="metadata" poster="./static/images/video-posters/long_horizon_nav.jpg" aria-hidden="true" tabindex="-1">
+      <source src="./static/videos/web/long_horizon_nav.mp4" type="video/mp4">
+    </video>
+    <div class="cover-shade"></div>
+    <header class="cover-header">
+      <div class="cover-links">
+        <a href="https://openreview.net/pdf?id=fPhuYFRsW1" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf" aria-hidden="true"></i> Paper</a>
+        <a href="https://www.youtube.com/watch?v=LAzciQnu_is" target="_blank" rel="noopener noreferrer"><i class="fas fa-play-circle" aria-hidden="true"></i> Video</a>
+      </div>
+    </header>
+    <div class="cover-content">
+      <h1 id="project-title">TANGO</h1>
+      <p class="cover-title">Humanoid Navigation in Cluttered Environments<br class="desktop-break"> with a Whole-Body Vision-Language-Action Model</p>
             <div class="is-size-5 publication-authors">
-              <span class="author-block"><a href="https://aq-li.github.io/" target="_blank" rel="noopener noreferrer">Anqi Li</a><sup>1,2,*</sup></span>
-              <span class="author-block"><a href="https://thomaschen98.github.io/" target="_blank" rel="noopener noreferrer">Yuxin Chen</a><sup>1,*,&Dagger;</sup></span>
-              <span class="author-block"><a href="https://www.linkedin.com/in/zhaoboli2887/" target="_blank" rel="noopener noreferrer">Zhaobo Li</a><sup>1,*</sup></span>
-              <span class="author-block"><a href="https://www.linkedin.com/in/zhuo-cao-9670263b3/" target="_blank" rel="noopener noreferrer">Zhuo Cao</a><sup>1,3,*</sup></span>
-              <span class="author-block"><a href="https://renjunli99.github.io/" target="_blank" rel="noopener noreferrer">Junli Ren</a><sup>1,4</sup></span><br>
-              <span class="author-block"><a href="https://msc.berkeley.edu/people/tomizuka.html" target="_blank" rel="noopener noreferrer">Masayoshi Tomizuka</a><sup>1</sup></span>
-              <span class="author-block"><a href="https://dhruvshah.me/" target="_blank" rel="noopener noreferrer">Dhruv Shah</a><sup>5,&dagger;</sup></span>
+              <span class="author-block"><a href="https://aq-li.github.io/" target="_blank" rel="noopener noreferrer">Anqi Li</a></span>
+              <span class="author-block"><a href="https://thomaschen98.github.io/" target="_blank" rel="noopener noreferrer">Yuxin Chen</a></span>
+              <span class="author-block"><a href="https://www.linkedin.com/in/zhaoboli2887/" target="_blank" rel="noopener noreferrer">Zhaobo Li</a></span>
+              <span class="author-block"><a href="https://www.linkedin.com/in/zhuo-cao-9670263b3/" target="_blank" rel="noopener noreferrer">Zhuo Cao</a></span>
+              <span class="author-block"><a href="https://renjunli99.github.io/" target="_blank" rel="noopener noreferrer">Junli Ren</a></span>
+              <span class="author-block"><a href="https://msc.berkeley.edu/people/tomizuka.html" target="_blank" rel="noopener noreferrer">Masayoshi Tomizuka</a></span>
+              <span class="author-block"><a href="https://dhruvshah.me/" target="_blank" rel="noopener noreferrer">Dhruv Shah</a></span>
             </div>
-            <div class="is-size-6 publication-affiliations">
-              <span class="author-block"><sup>1</sup> University of California, Berkeley</span>
-              <span class="author-block"><sup>2</sup> Peking University</span>
-              <span class="author-block"><sup>3</sup> Tsinghua University</span><br>
-              <span class="author-block"><sup>4</sup> The University of Hong Kong</span>
-              <span class="author-block"><sup>5</sup> Princeton University</span>
-            </div>
-            <div class="publication-contributions">
-              <span class="author-block"><sup>*</sup> Equal contribution.</span>
-              <span class="author-block"><sup>&Dagger;</sup> Project lead.</span>
-              <span class="author-block"><sup>&dagger;</sup> Corresponding author.</span>
-            </div>
-            <div class="publication-links">
-              <span class="link-block">
-                <a href="https://openreview.net/pdf?id=fPhuYFRsW1"
-                   class="external-link button is-normal is-rounded is-dark"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
-                  <span>Paper</span>
-                </a>
-              </span>
-              <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=LAzciQnu_is"
-                   class="external-link button is-normal is-rounded is-dark"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                  <span class="icon"><i class="fas fa-video"></i></span>
-                  <span>Video</span>
-                </a>
-              </span>
-            </div>
-            <div class="publication-status">
-              RSS@WCBM <span class="oral-highlight">Oral</span>
-            </div>
-
-          </div>
-        </div>
-      </div>
+      <p class="publication-status">Conference on Robot Learning 2026</p>
     </div>
   </section>
-
-  <section class="hero teaser" id="overview">
+  <nav class="section-nav" aria-label="Page sections"><div class="section-nav-inner">
+    <a href="#overview">Overview</a><a href="#video">Full video</a><a href="#method">Method</a><a href="#deployment">Deployment</a><a href="#demos">Demonstrations</a><a href="#conclusion">Conclusion</a>
+  </div></nav>
+  <section class="section overview-section" id="overview">
     <div class="container is-max-desktop">
-      <div class="hero-body">
-        <figure class="paper-figure">
-          <div class="teaser-video-wrap">
-            <div class="publication-video">
-              <iframe
-                src="https://www.youtube.com/embed/LAzciQnu_is?rel=0"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen>
-              </iframe>
-            </div>
-          </div>
-        </figure>
-        <h2 class="subtitle has-text-centered">
-          <strong class="method-name tango-name">TANGO</strong> is a whole-body vision-language-action framework for language-conditioned humanoid traversal in cluttered indoor environments.
-        </h2>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Abstract</h2>
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Navigation is a whole-body problem.</h2>
           <div class="content has-text-justified">
             <p>
               We study the problem of navigating cluttered indoor environments with a humanoid robot. Unlike conventional navigation methods that operate over simplified navigation abstractions, humanoid traversal in cluttered environments requires continuous geometry-aware whole-body adaptation, including coordinated arm placement, torso adjustment, and gait modulation for collision-free movement through complex 3D spaces.
@@ -128,19 +73,28 @@
     </div>
   </section>
 
+  <section class="section film-section" id="video">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">TANGO in motion.</h2>
+      <div class="publication-video">
+        <iframe loading="lazy" src="https://www.youtube.com/embed/LAzciQnu_is?rel=0" title="TANGO project video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <p class="video-fallback"><a href="https://www.youtube.com/watch?v=LAzciQnu_is" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></p>
+    </div>
+  </section>
+
   <section class="section section-band" id="method">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column is-full-width">
-          <p class="section-kicker">Method</p>
-          <h2 class="title is-3">Traversal via Whole-Body Vision-Language-Action Model</h2>
+          <h2 class="title is-3">From language to whole-body motion.</h2>
           <div class="content has-text-justified">
             <p>
               <span class="tango-name">TANGO</span> is a whole-body VLA system for cluttered indoor vision-language navigation. It combines a simulation data pipeline for collision-free traversal supervision with a triple-system model that maps language and egocentric RGB observations to executable whole-body action chunks.
             </p>
           </div>
           <figure class="paper-figure">
-            <img src="./static/images/architecture.png"
+            <img width="1575" height="836" loading="lazy" decoding="async" src="./static/images/architecture.png"
                  alt="TANGO architecture and data-generation pipeline.">
             <figcaption>
               <strong><span class="tango-name">TANGO</span> architecture and data pipeline.</strong>
@@ -167,8 +121,8 @@
             </article>
           </div>
 
-          <figure class="paper-figure deployment-figure">
-            <img src="./static/images/deployment-system.png"
+          <figure class="paper-figure deployment-figure" id="deployment">
+            <img width="770" height="594" loading="lazy" decoding="async" src="./static/images/deployment-system.png"
                  alt="TANGO real-world deployment system.">
             <figcaption>
               <strong>Real-world deployment system.</strong>
@@ -180,219 +134,61 @@
     </div>
   </section>
 
-  <section class="section" id="experiments">
+  <section class="section demos-section" id="demos">
     <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column is-full-width">
-          <p class="section-kicker">Experiments</p>
-          <h2 class="title is-3">Simulation and Real-World Evaluation</h2>
-          <div class="paper-card-grid findings-grid">
-            <article class="paper-card">
-              <h3 class="title is-5">VLN Performance</h3>
-              <p>Ours is the only compared method evaluated with low-level physical control, yet achieves the best SR and NE on both seen and unseen VLNVerse validation splits.</p>
-            </article>
-            <article class="paper-card">
-              <h3 class="title is-5">Cluttered Environment Traversal Performance</h3>
-              <p>On augmented cluttered VLNVerse scenes, Ours improves SR and SPL while reducing collision rate to 9.90 percent using only RGB observations.</p>
-            </article>
-            <article class="paper-card">
-              <h3 class="title is-5">Real-World Experiment</h3>
-              <p>Ours transfers zero-shot to a Unitree G1 humanoid for long-horizon navigation, cluttered-scene traversal, and narrow-passage side-stepping.</p>
-            </article>
-            <article class="paper-card">
-              <h3 class="title is-5">Ablation Studies</h3>
-              <p>Whole-body action generation remains robust under physical low-level control, while planar policies degrade substantially when moved from teleportation to embodied execution.</p>
-            </article>
-          </div>
+      <div class="section-heading"><h2 class="title is-3">One humanoid. A whole body of possibilities.</h2>
+        <p class="section-intro">Long-horizon navigation and geometry-aware traversal on a Unitree G1, transferred zero-shot from simulation.</p>
+      </div>
+      <div class="demo-grid navigation-demos"><figure class="demo-card">
+          <video controls playsinline muted loop preload="none" poster="./static/images/video-posters/long_horizon_nav.jpg" aria-label="Long-horizon navigation">
+            <source src="./static/videos/web/long_horizon_nav.mp4" type="video/mp4">
+            Your browser does not support embedded video. <a href="./static/videos/web/long_horizon_nav.mp4">Download this demo.</a>
+          </video>
+          <figcaption><span class="demo-number">01</span><div><h3>Long-horizon navigation</h3><p>Following language instructions through an indoor environment.</p></div></figcaption>
+        </figure>
+<figure class="demo-card">
+          <video controls playsinline muted loop preload="none" poster="./static/images/video-posters/short_horizon_obstacle_avoiding.jpg" aria-label="Obstacle avoidance">
+            <source src="./static/videos/web/short_horizon_obstacle_avoiding.mp4" type="video/mp4">
+            Your browser does not support embedded video. <a href="./static/videos/web/short_horizon_obstacle_avoiding.mp4">Download this demo.</a>
+          </video>
+          <figcaption><span class="demo-number">02</span><div><h3>Obstacle avoidance</h3><p>Adapting whole-body motion to traverse a cluttered scene.</p></div></figcaption>
+        </figure></div>
+      <div class="demo-group-heading"><h3>Making room with whole-body motion</h3><p>Sideways, under, and over: adapting to the geometry of a passage.</p></div>
+      <div class="demo-grid gateway-demos"><figure class="demo-card">
+          <video controls playsinline muted loop preload="none" poster="./static/images/video-posters/gateway_sidestep.jpg" aria-label="Sidestep">
+            <source src="./static/videos/web/gateway_sidestep.mp4" type="video/mp4">
+            Your browser does not support embedded video. <a href="./static/videos/web/gateway_sidestep.mp4">Download this demo.</a>
+          </video>
+          <figcaption><span class="demo-number">03</span><div><h3>Sidestep</h3><p>Reorienting the body to pass through a narrow opening.</p></div></figcaption>
+        </figure>
+<figure class="demo-card">
+          <video controls playsinline muted loop preload="none" poster="./static/images/video-posters/gateway_squat.jpg" aria-label="Squat">
+            <source src="./static/videos/web/gateway_squat.mp4" type="video/mp4">
+            Your browser does not support embedded video. <a href="./static/videos/web/gateway_squat.mp4">Download this demo.</a>
+          </video>
+          <figcaption><span class="demo-number">04</span><div><h3>Squat</h3><p>Lowering the body to move beneath an overhead obstacle.</p></div></figcaption>
+        </figure>
+<figure class="demo-card">
+          <video controls playsinline muted loop preload="none" poster="./static/images/video-posters/gateway_stride.jpg" aria-label="Stride">
+            <source src="./static/videos/web/gateway_stride.mp4" type="video/mp4">
+            Your browser does not support embedded video. <a href="./static/videos/web/gateway_stride.mp4">Download this demo.</a>
+          </video>
+          <figcaption><span class="demo-number">05</span><div><h3>Stride</h3><p>Stepping over a ground-level obstacle.</p></div></figcaption>
+        </figure></div>
+    </div>
+  </section>
 
-          <div class="table-stack">
-            <div class="table-card">
-              <h3 class="title is-5">VLNVerse Benchmark</h3>
-              <div class="table-container">
-                <table class="result-table">
-                  <thead>
-                    <tr>
-                      <th rowspan="2">Method</th>
-                      <th rowspan="2">Low-Level Control</th>
-                      <th colspan="4">Val Seen</th>
-                      <th colspan="4">Val Unseen</th>
-                    </tr>
-                    <tr>
-                      <th>NE</th>
-                      <th>OSR</th>
-                      <th>SR</th>
-                      <th>SPL</th>
-                      <th>NE</th>
-                      <th>OSR</th>
-                      <th>SR</th>
-                      <th>SPL</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>CMA</td>
-                      <td>No</td>
-                      <td>5.36</td>
-                      <td>59.81</td>
-                      <td>37.35</td>
-                      <td>33.36</td>
-                      <td>5.16</td>
-                      <td>62.79</td>
-                      <td>31.15</td>
-                      <td>27.92</td>
-                    </tr>
-                    <tr>
-                      <td>RDP</td>
-                      <td>No</td>
-                      <td>4.02</td>
-                      <td>68.09</td>
-                      <td>47.28</td>
-                      <td><strong>41.69</strong></td>
-                      <td>3.75</td>
-                      <td><strong>71.93</strong></td>
-                      <td>48.60</td>
-                      <td><strong>42.72</strong></td>
-                    </tr>
-                    <tr>
-                      <td>Seq2Seq</td>
-                      <td>No</td>
-                      <td>4.78</td>
-                      <td>44.68</td>
-                      <td>32.62</td>
-                      <td>30.39</td>
-                      <td>4.36</td>
-                      <td>49.58</td>
-                      <td>35.03</td>
-                      <td>33.37</td>
-                    </tr>
-                    <tr class="ours-row">
-                      <td>Ours</td>
-                      <td>Yes</td>
-                      <td><strong>3.90</strong></td>
-                      <td><strong>70.31</strong></td>
-                      <td><strong>54.69</strong></td>
-                      <td>40.18</td>
-                      <td><strong>3.72</strong></td>
-                      <td>71.07</td>
-                      <td><strong>52.89</strong></td>
-                      <td>40.18</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-            <div class="table-card-grid">
-              <div class="table-card">
-                <h3 class="title is-5">Cluttered VLNVerse Scenes</h3>
-                <div class="table-container">
-                  <table class="result-table compact-table">
-                    <thead>
-                      <tr>
-                        <th>Method</th>
-                        <th>NE</th>
-                        <th>SR</th>
-                        <th>SPL</th>
-                        <th>CR</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>InternVLA-N1 + Unitree Control</td>
-                        <td>5.34</td>
-                        <td>26.67</td>
-                        <td>11.92</td>
-                        <td>19.03</td>
-                      </tr>
-                      <tr>
-                        <td>InternVLA-N1 + HumanoidPF</td>
-                        <td><strong>3.19</strong></td>
-                        <td>35.29</td>
-                        <td>24.35</td>
-                        <td>16.11</td>
-                      </tr>
-                      <tr class="ours-row">
-                        <td>Ours</td>
-                        <td>4.01</td>
-                        <td><strong>43.75</strong></td>
-                        <td><strong>31.83</strong></td>
-                        <td><strong>9.90</strong></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-
-              <div class="table-card">
-                <h3 class="title is-5">Action-Space Ablation</h3>
-                <div class="table-container">
-                  <table class="result-table compact-table">
-                    <thead>
-                      <tr>
-                        <th>Method</th>
-                        <th>Low-Level Control</th>
-                        <th>SR</th>
-                        <th>SPL</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>InternVLA-N1</td>
-                        <td>No</td>
-                        <td>43.69</td>
-                        <td>35.74</td>
-                      </tr>
-                      <tr>
-                        <td>Ours-2D</td>
-                        <td>No</td>
-                        <td>45.74</td>
-                        <td>35.44</td>
-                      </tr>
-                      <tr>
-                        <td>InternVLA-N1</td>
-                        <td>Yes</td>
-                        <td>42.37</td>
-                        <td>22.50</td>
-                      </tr>
-                      <tr>
-                        <td>Ours-2D</td>
-                        <td>Yes</td>
-                        <td>26.67</td>
-                        <td>8.34</td>
-                      </tr>
-                      <tr class="ours-row">
-                        <td>Ours</td>
-                        <td>Yes</td>
-                        <td><strong>52.89</strong></td>
-                        <td><strong>40.18</strong></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <figure class="paper-figure">
-            <img src="./static/images/real-results.png"
-                 alt="Real-world humanoid navigation results.">
-            <figcaption>
-              <strong>Real-world deployment.</strong>
-              Ours performs long-horizon language-guided navigation, traverses cluttered environments, and adapts whole-body motions to pass through narrow spaces without real-world training.
-            </figcaption>
-          </figure>
-
-          <div class="content has-text-justified">
-            <h3 class="title is-4">Conclusion</h3>
-            <p>
+  <section class="section conclusion-section" id="conclusion">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Conclusion</h2>
+      <div class="content has-text-justified">
+        <p>
               Ours demonstrates that a whole-body VLA policy can directly predict 29-DoF actions for humanoid navigation. The results show strong language-guided navigation performance, improved collision-aware traversal in cluttered scenes, and zero-shot sim-to-real transfer on humanoid hardware.
             </p>
-          </div>
-        </div>
       </div>
     </div>
   </section>
 </main>
-
+<footer class="site-footer"><div class="footer-inner"><a class="wordmark tango-name" href="#top">TANGO</a><p>Website design adapted from <a href="https://transformer-transformer.github.io/" target="_blank" rel="noopener noreferrer">Transformer Transformer</a> and <a href="https://nerfies.github.io/" target="_blank" rel="noopener noreferrer">Nerfies</a>.</p><a href="#top">Back to top ↑</a></div></footer>
 </body>
 </html>
