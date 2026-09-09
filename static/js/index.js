@@ -17,10 +17,19 @@ document.addEventListener('DOMContentLoaded', () => {
   syncPlayback();
 
   const demos = [...document.querySelectorAll('.demo-card video')];
-  // Demos keep native controls; only the video selected by the visitor plays.
-  demos.forEach(video => video.addEventListener('play', () => {
-    demos.forEach(other => { if (other !== video) other.pause(); });
-  }));
+  const demoVisibility = new Map(demos.map(video => [video, !('IntersectionObserver' in window)]));
+  function syncDemoPlayback(video) {
+    video.autoplay = demoVisibility.get(video) && !document.hidden && !motion.matches;
+    if (video.autoplay) {
+      video.play().catch(() => {});
+    } else {
+      video.pause();
+    }
+  }
+  const syncDemos = () => demos.forEach(syncDemoPlayback);
+  document.addEventListener('visibilitychange', syncDemos);
+  motion.addEventListener('change', syncDemos);
+  syncDemos();
 
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(entries => {
@@ -28,7 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
       syncPlayback();
     }, { threshold: 0 }).observe(cover);
     const demoObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => { if (!entry.isIntersecting) entry.target.pause(); });
+      entries.forEach(entry => {
+        demoVisibility.set(entry.target, entry.isIntersecting);
+        syncDemoPlayback(entry.target);
+      });
     }, { threshold: 0 });
     demos.forEach(video => demoObserver.observe(video));
   }

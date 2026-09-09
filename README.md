@@ -19,7 +19,7 @@ Open http://127.0.0.1:8765. No build step is required; the page is compatible wi
 - `static/videos/web/*.mp4`: H.264/AAC web copies with fast-start metadata (approximately 12 MB total).
 - `static/images/video-posters/*.jpg`: preview frames, displayed before playback.
 
-The cover groups the title, author names, and venue, with Arxiv/video links in the header. The cover loops `long_horizon_nav.mp4` silently. The five gallery videos have native playback, seeking, sound, and fullscreen controls. Gallery videos load on demand; playing one pauses the others. Videos pause when scrolled out of view, and visitors who prefer reduced motion get a still cover.
+The cover groups the title, author names, and venue, with Arxiv/video links in the header. The cover loops `long_horizon_nav.mp4` silently. The five gallery videos have native playback, seeking, sound, and fullscreen controls. All five gallery videos autoplay muted and loop when visible, and can play simultaneously. Videos pause offscreen or when the tab is hidden and resume when visible again. Visitors who prefer reduced motion get a still cover and can start gallery videos with their native controls.
 
 The header links to the arXiv paper and project video. Author names and links and the search-indexing setting are retained.
 
