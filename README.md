@@ -23,4 +23,6 @@ The cover groups the title, author names, and venue, with Arxiv/video links in t
 
 The header links to the arXiv paper and project video. Author names and links and the search-indexing setting are retained.
 
-Page order: Overview → Full video → Method (including deployment) → Demonstrations → Conclusion.
+Page order: Overview → Full video → Method (including deployment) → Demonstrations → Conclusion → BibTeX.
+
+The BibTeX entry uses the arXiv title and author order and cites the work at CoRL 2026. The Copy button copies the entry to the clipboard.

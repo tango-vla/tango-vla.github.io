@@ -63,4 +63,21 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!scheduled) { scheduled = true; requestAnimationFrame(updateNavigation); }
   }, { passive: true });
   updateNavigation();
+
+  const copyButton = document.getElementById('copy-bibtex');
+  const citation = document.getElementById('bibtex-code');
+  const copyStatus = document.getElementById('bibtex-status');
+  copyButton.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(citation.textContent.trim());
+      copyStatus.textContent = 'Citation copied.';
+    } catch {
+      const range = document.createRange();
+      range.selectNodeContents(citation);
+      const selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+      copyStatus.textContent = 'Citation selected. Use your browser’s Copy command.';
+    }
+  });
 });
